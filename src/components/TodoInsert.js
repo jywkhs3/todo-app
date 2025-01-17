@@ -4,17 +4,21 @@ const TodoInsert = ({onInsert}) => {
   const [value,setValue] = useState(null);
   const handleSubmit = (e)=>{
     e.preventDefault();
-    onInsert(value);
+    if(value.length > 0){
+      onInsert(value);
+      setValue('');
+    }
   }
   const handleInput = (e) => {
     setValue(e.target.value);
   }
   return (
     <form className='todo-insert' onSubmit={handleSubmit}>
-      <input type='text' 
-      placeholder='할일을 입력하세요'
-      onChange={handleInput}
-      ></input>
+      <input type='text'
+            value={value} 
+            placeholder='할일을 입력하세요'
+            onChange={handleInput}>
+      </input>
       <button type='submit'>+</button>
     </form>
   );

@@ -1,7 +1,9 @@
+//App component
 .app{
   width: 500px;
   margin: 0 auto;
 }
+//TodoTemplate component
 .todo-template{
   h1{
     text-align: center;
@@ -13,7 +15,7 @@
     background-color: #fff;
   }
 }
-
+//TodoInsert component
 .todo-insert{
   display: flex;
   justify-content: space-between;
@@ -37,17 +39,36 @@
     font-size: 1.5rem;
   }
 }
+
+//TodoList component
 .todo-list{
   li{
     list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 0;
+    label{
+      flex: 1;
+      font-size: 1.2rem;
+    }
+    button{
+      cursor: pointer;
+      width: 20px;
+      color: #f00;
+      border: {
+        radius: 50%;
+        width: 1px;
+        style: solid;
+        color:#f00;
+      }
+    }
   }
   input{
     cursor: pointer;
   }
-  button{
-    cursor: pointer;
-  }
   label.checkedLine{
+    color: #666;
     text-decoration: line-through;
   }
 }
